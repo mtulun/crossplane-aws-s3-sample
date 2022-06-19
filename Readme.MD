@@ -1,4 +1,4 @@
-## Crossplane
+# Crossplane Example S3 Bucket Creation
 
 * Install Configuration Package
     - kubectl crossplane install configuration registry.upbound.io/xp/getting-started-with-aws:v1.8.1
@@ -81,7 +81,7 @@
 
             "Condition" : { "StringEqualsIgnoreCase" : { "aws:username" : "johndoe" }}
 
-# The condition block
+## The condition block
 
 * The following example shows the basic format of a ```Condition``` element:
 
