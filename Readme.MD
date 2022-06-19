@@ -50,7 +50,8 @@
 
 ### Notes
 
-    - After a bucket is created, folder prefixes and files are not lost when an update is made on that bucket.
+    - After a bucket is created, folder prefixes and files are not lost
+      when an update is made on that bucket.
 
 ## For Bucket Policy we can configure IAM JSON policy elements: Condition
 
