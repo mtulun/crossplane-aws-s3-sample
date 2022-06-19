@@ -1,0 +1,17 @@
+apiVersion: s3.aws.crossplane.io/v1beta1
+kind: Bucket
+metadata:
+  name: rancher-backups-bucket
+spec:
+  forProvider:
+    acl: private
+    locationConstraint: eu-west-1
+    objectLockEnabledForBucket: false
+    tagging:
+     tagSet:
+     - key: "ProjectOwner"
+       value: "Devops"
+     - key: "Project"
+       value: "Infra as code with Crossplane"
+  providerConfigRef:
+    name: awsconfig

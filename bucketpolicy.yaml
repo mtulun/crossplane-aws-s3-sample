@@ -1,0 +1,26 @@
+apiVersion: s3.aws.crossplane.io/v1alpha3
+kind: BucketPolicy
+metadata:
+  name: policy-for-bucket-crossplane
+spec:
+  forProvider:
+    region: eu-west-1
+    bucketNameRef:
+      name: rancher-backups-bucket
+    policy:
+      version: '2012-10-17'
+      statements:
+        - action:
+            - s3:ListBucket
+            - s3:GetBucketLocation
+            - s3:ListBucketMultipartUploads
+          effect: Allow
+          resource:
+            - arn:aws:iam::<IAM>
+          condition:
+          - operatorKey: StringLike
+            conditions:
+              - key: "s3:prefix"
+                stringValue: "${aws:username}"
+  providerConfigRef:
+    name: awsconfig
