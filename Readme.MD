@@ -60,9 +60,7 @@
       (equal, less than, etc.) to match the condition keys and values in the policy against
       keys and values in the request context.
 
-        ````
             "Condition" : { "{condition-operator}" : { "{condition-key}" : "{condition-value}" }}
-        ````
     
     - The condition key that you specify can be a global condition key or a service-specific
       condition key. Global condition keys have the aws: prefix. Service-specific condition keys
